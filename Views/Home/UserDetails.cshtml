@@ -1,0 +1,41 @@
+﻿@model MVC_lib.Models.User
+@{
+    ViewBag.Title = "User Details";
+}
+
+<h2> Подробности о пользователе: @Html.DisplayFor(model => model.m_Name)</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID пользователя</th>
+            <th scope="col">Имя пользователя</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="space">@Html.DisplayFor(model => model.m_ID)</td>
+            <td class="space">@Html.DisplayFor(model => model.m_Name)</td>
+        </tr>
+    </tbody>
+</table>
+<h3> Список книг пользователя: </h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Название книги</th>
+            <th scope="col">Описание книги</th>
+            <th scope="col">Подробности книги</th>
+        </tr>
+    </thead>
+    <tbody>
+            @for (int i = 0; i < Model.Book.Count; i++)
+            {
+            <tr>
+             <td class="space">@Html.DisplayFor(model => model.Book[i].m_Name)</td>
+             <td class="space">@Html.DisplayFor(model => model.Book[i].m_Description)</td>
+             <td class="space"><a asp-action="DetailsBook" asp-controller="Home" asp-route-id="@Model.Book[i].m_ID">Подробнее</a></td>
+            </tr>
+            }
+    </tbody>
+</table>
+<h3> Всего книг у пользователя: @Model.Book.Count</h3>

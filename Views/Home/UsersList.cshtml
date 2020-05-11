@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MVC_lib.Models.User>
+@{
+    ViewBag.title = "Список пользователей";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Подробнее</th>
+        </tr>
+    <tbody>
+        @foreach (var User in Model)
+        {
+        <tr>
+            <td>@User.m_ID</td>
+            <td>@User.m_Name</td>
+            <td class="space"><a asp-action="UserDetails" asp-controller="Home" asp-route-id="@User.m_ID">Подробнее</a></td>
+        </tr>
+        }
+    </tbody>
+    </thead>
+</table>

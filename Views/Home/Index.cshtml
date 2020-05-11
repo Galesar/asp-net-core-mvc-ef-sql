@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MVC_lib.Models.Book>
+@{
+    ViewData["Title"] = "Books list";
+}
+    <!DOCKTYPE html>
+    <head>
+        <title>Библиотека, список книг</title>
+
+    </head>
+
+    <body>
+        <header>
+
+        </header>
+
+        <h2>Все книги библиотеки</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Описание</th>
+                    <th scope="col">Владелец</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                <tr>
+                    <td class="space">@book.m_ID</td>
+
+                    <td class="space">@book.m_Name</td>
+
+                    <td class="space">@book.m_Description</td>
+
+                    <td class="space">@book.User.m_Name</td>
+
+
+                    <td class="space"><a asp-action="DeleteBook" asp-controller="Home" asp-route-id="@book.m_ID">Удалить</a></td>
+                    <td class="space"><a asp-action="EditBook" asp-controller="Home" asp-route-id="@book.m_ID">Изменить</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="Add_book_in_library">
+            <a asp-action="CreateBook">Добавить книгу</a>
+        </div>
+
+        <footer>
+            <!-- empty -->
+        </footer>
+
+    </body>
+
+
+
+    </!DOCKTYPE>
+

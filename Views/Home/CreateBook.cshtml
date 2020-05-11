@@ -1,0 +1,26 @@
+﻿@model MVC_lib.Models.Book
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewBag.Title = "Добавление книги в библиотеку";
+}
+    <form asp-action="CreateBook" asp-controller="Home">
+        <div class="form-group">
+            <label asp-for="m_Name" class="control-label">Название книги</label>
+            <input type="text" maxlength="40" placeholder="Введите название книги, максимальная длинна - 40 символов" asp-for="m_Name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="m_Description" class="control-label">Описание книги</label>
+            <input type="text" maxlength="100" placeholder="Введите краткое описание книги, максимальная длинна - 100 символов" asp-for="m_Description" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="UserID" class="control-label">ID пользователя</label>
+            <input type="text" maxlength="4" placeholder="Введите id нового пользователя" asp-for="UserID" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Отправить" class="btn btn-outline-dark" />
+        </div>
+
+    </form>
