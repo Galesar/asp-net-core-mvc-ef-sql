@@ -16,12 +16,14 @@ namespace MVC_lib.Models
                     new Book
                     {
                         m_Name = "Give me this job, please",
-                        m_Description = "This book is about how I tried to get this job."
+                        m_Description = "This book is about how I tried to get this job.",
+                        UserID = 1
                     },
                     new Book
                     {
                         m_Name = "Give me this job. part 2,",
-                        m_Description = "But i hope, that i can do it."
+                        m_Description = "But i hope, that i can do it.",
+                        UserID = 1
                     });
             };
             if (!context.Users.Any())
@@ -29,7 +31,7 @@ namespace MVC_lib.Models
                 context.Users.AddRange(
                     new User
                     {
-                        m_Name = "Admin"
+                        m_Name = "Library"
                     });
                 context.SaveChanges();
             }

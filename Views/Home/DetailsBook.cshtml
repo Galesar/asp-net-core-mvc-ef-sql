@@ -1,4 +1,12 @@
-﻿@model IEnumerable<MVC_lib.Models.Book>
+﻿@model MVC_lib.Models.Book
 @{
     ViewBag.title = "Детали книги";
 }
+
+    <center>
+        <h2>Подробности о книге: @Model.m_Name</h2>
+        <h3>ID книги: @Model.m_ID</h3>
+        <h3 class="d-inline">Владелец: @Model.User.m_Name</h3>
+        <a class="btn btn-primary d-inline" role="button" asp-action="UserDetails" asp-controller="Home" asp-route-id="@Model.UserID">Подробнее</a>
+        <h3>Описание книги: @Model.m_Description</h3>
+    </center>

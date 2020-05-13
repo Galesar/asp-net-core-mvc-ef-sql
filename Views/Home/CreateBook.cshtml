@@ -4,6 +4,7 @@
     ViewBag.Title = "Добавление книги в библиотеку";
 }
     <form asp-action="CreateBook" asp-controller="Home">
+        <div> <h4 class="alert-info">Максимальное количество книг у одного пользователя: 4</h4> </div>
         <div class="form-group">
             <label asp-for="m_Name" class="control-label">Название книги</label>
             <input type="text" maxlength="40" placeholder="Введите название книги, максимальная длинна - 40 символов" asp-for="m_Name" class="form-control" />
@@ -18,7 +19,6 @@
             <label asp-for="UserID" class="control-label">ID пользователя</label>
             <input type="text" maxlength="4" placeholder="Введите id нового пользователя" asp-for="UserID" class="form-control" />
         </div>
-
         <div class="form-group">
             <input type="submit" value="Отправить" class="btn btn-outline-dark" />
         </div>

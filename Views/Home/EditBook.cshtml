@@ -4,6 +4,7 @@
 }
 
     <form asp-action="EditBook" asp-controller="Home" asp-route-id="@Model.m_ID">
+        <div> <h4 class="alert-info">Максимальное количество книг у одного пользователя: 4</h4> </div>
         <div class="form-group">
             <label asp-for="m_Name" class="control-label">Название книги</label>
             <input type="text" maxlength="40" placeholder="Введите новое название книги, максимальная длинна - 40 символов" asp-for="m_Name" class="form-control" />

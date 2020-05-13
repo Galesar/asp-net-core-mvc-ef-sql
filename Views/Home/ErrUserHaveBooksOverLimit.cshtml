@@ -1,0 +1,10 @@
+﻿@model MVC_lib.Models.User
+@{
+    ViewBag.Title = "Erorr";
+}
+
+    <center>
+        <h2 class="alert-warning">Ошибка добавления книги пользователю.</h2>
+        <h2>@Model.m_Name имеет максимальное количество дозволенных книг</h2>
+        <a asp-action="Index" asp-controller="Home">Вернуться</a>
+    </center>
